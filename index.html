@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>Asatsuyu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        *{
+            color: #fff;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto Slab', serif;
+            font-weight: 300;
+        }
+    .swiper {
+      max-width: 100%;
+      height: 60vh;
+      position: relative;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+    }
+    .swiper-pagination{
+        position: absolute;
+        bottom: 10%;
+    }
+    .menubar{
+        position: absolute;
+        right: 0;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    .about h1{
+        color: #B6FF50;
+    }
+    .about h4{
+        color: #64A705;
+    }
+    .about p{
+        letter-spacing: 1px;
+        margin-bottom: 50px;
+        text-shadow: 0 0 4px #fff;
+
+    }
+    .seeMore{
+        text-decoration: none;
+        border: 1px solid #64A705;
+        color: #64A705;
+        padding: 8px 30px;
+    }
+    #experience{
+        margin-top: 250px;
+        text-align: center;
+    }
+    #experience h1{
+        color: #B6FF50;
+    }
+    #experience p{
+        letter-spacing: 1px;
+        margin-bottom: 50px;
+        text-shadow: 0 0 4px #fff;
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 60px;
+        margin-bottom: 130px;
+    }
+    .card{
+        border: none !important;
+        background-color: #2D2D2D;
+        width: calc(50% - 10px); /* Calculate 50% width minus spacing */
+        transition: .3s ease;
+    }
+    .card:hover{
+        transform: translateY(-15px) !important;
+        box-shadow: 0 0 20px #fff;
+    }
+    .card p{
+        color: #ffffff;
+        margin: 0 !important;
+        width: 100% !important;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .card h5{
+        position: absolute;
+        bottom: 30%;
+        left: 0;
+        color: #B6FF50;
+        z-index: 10;
+        width: 100%;
+        text-align: center;
+    }
+    .card .overlaycard{
+        position: absolute;
+        bottom: 14%;
+        left: -10%;
+        background-color: #2D2D2D;
+        width: 250%;
+        height: 10vh;
+        z-index: 1;
+        filter: blur(20px);
+    }
+    .card-container{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 20px;
+    }
+
+    footer{
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 300px;
+        text-align: center;
+    }
+    footer ul{
+        list-style: none;
+        margin-top: -20px;
+        margin-left: -30px;
+        margin-bottom: 30px;
+    }
+    footer li{
+        display: inline-block;
+        margin: 10px 25px;
+    }
+    footer li a{
+        font-size: 1.8rem;
+    }
+
+    footer nav a{
+        text-decoration: none;
+        margin: 10px 40px;
+        color: #fff;
+        transition: .2s ease;
+    }
+    footer .newsletter{
+        width: 40%;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    footer nav a:hover{
+        color: #64A705;
+    }
+    .custombtn{
+        background-color: #64A705;
+        border-radius: 3px;
+    }
+    .custombtn:hover{
+        background-color: #518706;
+    }
+    .customform{
+        background: rgba(249, 255, 241, 0.611);
+        border: none;
+        transition: 0.3s ease;
+        border-radius: 3px;
+    }
+
+    #about_section{
+        background: url("bgabout.png");
+        padding: 80px 0;
+        width: 100%;
+        height: 80vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+    .image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Height of the blurred border */
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5)); /* Gradient background for the border */
+    filter: blur(10px); /* Apply blur effect */
+    }
+
+    #aboutsec::before{
+        content: "";
+        position: absolute;
+        top: -10px; /* Adjust the value to control the size of the blurred border */
+        left: 0;
+        width: 100%;
+        height: 20px; /* Adjust the value to control the size of the blurred border */
+        filter: blur(10px); /* Adjust the blur amount as needed */
+        background: #000; /* Adjust the color and opacity as needed */
+        z-index: 2;
+    }
+    #aboutsec::after{
+        content: "";
+        position: absolute;
+        bottom: -10px; /* Adjust the value to control the size of the blurred border */
+        left: 0;
+        width: 100%;
+        height: 20px; /* Adjust the value to control the size of the blurred border */
+        filter: blur(10px); /* Adjust the blur amount as needed */
+        background: #000; /* Adjust the color and opacity as needed */
+        z-index: 2;
+    }
+
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px){
+            footer .newsletter{
+                width: 90%;
+                margin-top: 50px;
+            }
+            footer nav a{
+                margin: 10px;
+            }
+            footer{
+                width: 90% !important;
+            }
+            footer li{
+                margin: 10px 15px;
+            }
+            #headerContainer{
+                width: 95% !important;
+            }
+            .menubar{
+                right: 2%;
+                top: -5%;
+            }
+            .swiper{
+                height: 40vh;
+            }
+            .swiper-pagination{
+                bottom: -15%;
+            }
+            .swiper-button-next, .swiper-button-prev{
+                display: none;
+            }
+            
+            #aboutsec{
+                width: 100% !important;
+            }
+            .about{
+                width: 90% !important;
+            }
+            .about p{
+                font-size: 0.9rem;
+            }
+            .about h1{
+                margin-bottom: 50px;
+            }
+            .about h4{
+                font-size: 1.2rem;
+            }
+            #experience p{
+                width: 90% !important;
+            }
+
+
+            .leaf-1{
+                left: 0;
+                top: -5%;
+            }
+            .leaf-1 img{
+                width: 130px !important;
+            }
+            .leaf-2{
+                z-index: 1;
+            }
+            .leaf-2 img{
+                width: 180px !important;
+            }
+            #about_section{
+                height: 110vh !important;
+            }
+        }
+        /* Small devices (portrait, tablets and large phones,600px and up) */
+        @media only screen and (min-width: 600px){
+            .leaf-1{
+                left: 0;
+                top: -5%;
+            }
+            .leaf-1 img{
+                width: 180px !important;
+            }
+            .leaf-2{
+                z-index: 1;
+            }
+            .leaf-2 img{
+                width: 250px !important;
+            }
+            #about_section{
+                height: 110vh !important;
+            }
+
+            footer nav a{
+                margin: 10px;
+            }
+            footer{
+                width: 90% !important;
+            }
+            footer li{
+                margin: 10px 15px;
+            }
+
+            #experience p{
+                width: 90% !important;
+            }
+            #headerContainer{
+                width: 95% !important;
+            }
+            .swiper-pagination{
+                bottom: -15%;
+            }
+            .swiper{
+                height: 50vh;
+            }
+            .swiper-button-next, .swiper-button-prev{
+                display: none;
+            }
+            .menubar{
+                right: 2%;
+                top: -5%;
+            }
+            #aboutsec{
+                width: 100% !important;
+            }
+            .about{
+                width: 90% !important;
+            }
+            .about p{
+                font-size: 0.9rem;
+            }
+            .about h1{
+                margin-bottom: 50px;
+            }
+            .about h4{
+                font-size: 1.2rem;
+            }
+            footer .newsletter{
+                width: 80%;
+                margin-top: 50px;
+            }
+        }
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px){
+            .leaf-1{
+                left: 0;
+                top: -5%;
+            }
+            .leaf-1 img{
+                width: 200px !important;
+            }
+            .leaf-2{
+                z-index: 1;
+                bottom: 3% !important;
+
+            }
+            .leaf-2 img{
+                width: 320px !important;
+            }
+            #about_section{
+                height: 110vh !important;
+            }
+
+            footer .newsletter{
+                width: 60%;
+                margin-top: 50px;
+            }
+            #experience p{
+                width: 50% !important;
+            }
+        }
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px){
+
+
+
+            footer .newsletter{
+                width: 50%;
+                margin-top: 50px;
+            }
+            .swiper{
+                width: 80%;
+                height: 60vh;
+            }
+            .menubar{
+                right: 11%;
+                top: -3%;
+            }
+            .swiper-pagination{
+                bottom: -13%;
+            }
+            #aboutsec{
+                width: 50% !important;
+            }
+            .about{
+                width: 90% !important;
+            }
+            .about p{
+                font-size: 0.9rem;
+            }
+            .about h1{
+                margin-bottom: 50px;
+            }
+            .about h4{
+                font-size: 1.2rem;
+            }
+        }
+        /* Extra Large devices (large laptops and desktops, 1200px and up) */
+        @media only screen and (min-width: 1200px){
+            footer .newsletter{
+                width: 30%;
+                margin-top: 50px;
+            }
+        }
+
+        .leaf-1{
+            position: absolute;
+            left: 0;
+            top: -5%;
+            z-index: 1;
+        }
+        .leaf-1 img{
+            width: 250px;
+        }
+        .leaf-2{
+            position: absolute;
+            right: 0;
+            bottom: -5%;
+        }
+        .leaf-2 img{
+            width: 380px;
+        }
+        .offcanvas .navigation ul{
+            list-style: none;
+            padding: 0;
+            margin-top: 250;
+            display: flex;
+            flex-direction: column;
+        }
+        .offcanvas .navigation ul a:hover{
+            background: #424242;
+            transition: .3s ease;
+        }
+        .offcanvas .navigation ul  a{
+            text-decoration: none !important;
+            color: #fff;
+            padding: 20px !important;
+            width: 100% !important;
+            text-align: center;
+            border-top: 1px solid #fff;
+        }
+        .offcanvas .navigation ul a:nth-child(5){
+            border-bottom: 1px solid #fff;
+
+        }
+
+        .splash{
+            background: #fff !important;
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            display: flex;
+            align-items: center;
+        }
+        .imageSplash{
+            animation: splashscreen 6s;
+        }
+        @keyframes splashscreen {
+            from{opacity:0}
+            to{opacity:1}
+        }
+        .goUp{
+            animation: toHide 3s;
+        }
+        @keyframes toHide {
+            from{
+                opacity: 1;
+            }
+            to{
+                top: -100%;
+            }
+        }
+    </style>
+
+    </head>
+  <body style="background-color: #000000;">
+    <div class="splash">
+        <img src="logo.webp" class="d-block mx-auto mb-5 imageSplash" width="250" alt="">
+    </div>
+    <div style="overflow: hidden;">
+    <div class="container position-relative mt-5 mb-5" style="width: 60%;" id="headerContainer">
+        <button type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><i class="fa-solid fa-bars menubar"></i></button>
+        <div class="offcanvas offcanvas-end bg-dark" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
+              <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+                <div class="navigation">
+                    <ul>
+                        
+                        <a href="">Home</a>
+                        <a href="">Experience</a>
+                        <a href="">Service</a>
+                        <a href="">About Us</a>
+                        <a href="">Contact</a>
+                    </ul>
+                  </div>
+          </div>
+        <img src="logo.webp" class="d-block mx-auto mb-5" width="180" alt="">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="https://asianwanderlust.com/wp-content/uploads/2018/09/Shinjuku-Tokyo-Kabukicho.jpg" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="https://c4.wallpaperflare.com/wallpaper/50/519/649/religious-pagoda-cherry-blossom-japan-wallpaper-preview.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8fA%3D%3D&w=1000&q=80" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://expertphotography.b-cdn.net/wp-content/uploads/2019/03/travel-pictures-hakone.jpg" />
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <div class="swiper-pagination" ></div>
+    </div> <br><br><br><br><br>
+    <section id="about_section">
+        <div class="container mt-5" style="width: 60%;" id="aboutsec">
+            
+            <div class="mt-5 text-center about" style="width: 70%; margin: 0 auto; z-index: 99;" data-aos="fade-up">
+                <h1>ASATSUYU 朝露</h1>
+                <h4>Luxury Bespoke Travel Experience in Japan</h4><br>
+                <p>
+                    Asatsuyu Japan Luxury Travel offers access to exclusive experiences that you won’t find anywhere else, so you can experience the best of Japan’s culture, cuisine, and beauty. 
+                    <br><br>Whether you’re looking for a romantic getaway, a family vacation, or solo travel we can make sure you get the most out of your time in Japan.<br><br><br>
+                    Searching and planning to travel takes time. So, We carefully selected luxury accommodations, dining, traditional wellness, and unforgettable experiences for exclusive and luxury travel experiences in Japan.
+                </p>
+                <!-- <a href="#" class="seeMore">See More</a> -->
+                <button class="btn custombtn w-25">See More</button>
+            </div>
+            <div class="leaf-1" data-aos="fade-up-right" 
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="1200"
+            data-aos-duration="1200">
+                <img src="leaves1.png" alt="">
+            </div>
+            <div class="leaf-2" data-aos="fade-down-left" data-aos-anchor="#example-anchor"
+            data-aos-offset="1200"
+            data-aos-duration="1200">
+                <img src="leaves2.png" alt="">
+            </div>
+        </div>
+            
+       
+    </section>
+    <div class="container mt-5">
+        <section id="experience">
+            <h1>Experience All Seasons in Japan</h1>
+            <p>From snowy winters to blooming springs, sun-soaked summers, and vibrant autumns, Japan beckons with diverse seasonal wonders.</p>
+        
+        </section>
+    </div>
+    <div class="card-container">
+        <div class="card" style="width: 18rem; overflow: hidden;"
+        data-aos="fade-up"
+        data-aos-duration="1000">
+            <div class="overlaycard card-img-top"></div>
+            <img src="winter.png" class="card-img-top" alt="...">
+            <div class="card-body"  style="overflow: hidden; z-index: 9;">
+
+              <h5 class="card-title">Winter</h5>
+              <p class="card-text">Embrace Japan's Winter Charm: Delight in snowy landscapes, onsens, and culture. Expand Your World.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; overflow: hidden;"
+        data-aos="fade-up"
+        data-aos-duration="800">
+            <div class="overlaycard card-img-top"></div>
+            <img src="spring.png" class="card-img-top" alt="...">
+            <div class="card-body"  style="overflow: hidden; z-index: 9;">
+
+              <h5 class="card-title">Spring</h5>
+              <p class="card-text">Awaken in Japan's Spring Splendor: Cherry blossoms bloom, festivals flourish. Expand Your World.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; overflow: hidden;"
+        data-aos="fade-up"
+        data-aos-duration="600">
+            <div class="overlaycard card-img-top"></div>
+            <img src="summer.png" class="card-img-top" alt="...">
+            <div class="card-body"  style="overflow: hidden; z-index: 9;">
+
+              <h5 class="card-title">Summer</h5>
+              <p class="card-text">Experience Family-Friendly Summer: Japan's vibrant festivals, lush nature, and captivating culture. Discover Summer Adventures.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; overflow: hidden;"
+        data-aos="fade-up"
+        data-aos-duration="400">
+            <div class="overlaycard card-img-top"></div>
+            <img src="autumn.png" class="card-img-top" alt="...">
+            <div class="card-body"  style="overflow: hidden; z-index: 9;">
+
+              <h5 class="card-title">Autumn</h5>
+              <p class="card-text">Cherish Fall Foliage: Japan's Autumn painted in vibrant hues, offering serene beauty. Discover Autumn's Delights.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <img src="logo.webp" class="d-block mx-auto mb-5" width="180" alt="">
+        <ul>
+            <li><a href=""><i class="fa-brands fa-facebook" style="color: #4267b2;"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-square-instagram" style="color: #962fbf;"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-square-twitter" style="color: #1da1f2;"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-telegram" style="color: #0088cc;"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-square-whatsapp" style="color: #25d366;"></i></a></li>
+        </ul>
+        <nav>
+            <a href="">Home</a>
+            <a href="">Experience</a>
+            <a href="">Service</a>
+            <a href="">About Us</a>
+            <a href="">Contact</a>
+        </nav>
+        <div class="newsletter">
+            <div class="row">
+                <div class="col-8"><input type="text" class="form-control customform" placeholder="Sign up for newsletter"></div>
+                <div class="col-4"><button class="btn custombtn w-100">Sign Up</button></div>
+            </div>
+        </div>
+        <br><br>
+        <p style="font-size: 0.9rem; margin-top: 50px;">Copyright @ 2023 - All Rights Reserved by <span style="color: #B6FF50;">Asatsuyu</span>.</p>
+        <br><br>
+    </footer>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        AOS.init();
+        var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        effect: "fade",
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
+        });
+
+
+
+        setTimeout(function() {
+            document.querySelector('.splash').classList.add('goUp')
+        }, 5000);
+        setTimeout(function() {
+            document.querySelector('.splash').remove()
+        }, 8000);
+    </script>
+    </body>
+</html>
