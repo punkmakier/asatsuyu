@@ -8,22 +8,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         *{
             color: #fff;
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-            font-family: 'Roboto Slab', serif;
+            font-family: 'Poppins', sans-serif;
             font-weight: 300;
         }
     .swiper {
       max-width: 100%;
-      height: 60vh;
+      height: 80vh;
       position: relative;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
     }
 
     .swiper-slide {
@@ -35,10 +38,7 @@
       display: block;
       width: 100%;
     }
-    .swiper-pagination{
-        position: absolute;
-        bottom: 10%;
-    }
+
     .menubar{
         position: absolute;
         right: 0;
@@ -46,7 +46,7 @@
         cursor: pointer;
     }
     .about h1{
-        color: #B6FF50;
+        color: #64A705;
     }
     .about h4{
         color: #64A705;
@@ -68,7 +68,7 @@
         text-align: center;
     }
     #experience h1{
-        color: #B6FF50;
+        color: #64A705;
     }
     #experience p{
         letter-spacing: 1px;
@@ -81,13 +81,15 @@
     }
     .card{
         border: none !important;
-        background-color: #2D2D2D;
+        background-color: #191919;
         width: calc(50% - 10px); /* Calculate 50% width minus spacing */
         transition: .3s ease;
+        border-radius: 0px !important;
     }
+
     .card:hover{
         transform: translateY(-15px) !important;
-        box-shadow: 0 0 20px #fff;
+        box-shadow: 0 0 20px #1c1c1c;
     }
     .card p{
         color: #ffffff;
@@ -100,7 +102,7 @@
         position: absolute;
         bottom: 30%;
         left: 0;
-        color: #B6FF50;
+        color: #518706;
         z-index: 10;
         width: 100%;
         text-align: center;
@@ -109,7 +111,7 @@
         position: absolute;
         bottom: 14%;
         left: -10%;
-        background-color: #2D2D2D;
+        background-color: #191919;
         width: 250%;
         height: 10vh;
         z-index: 1;
@@ -173,7 +175,6 @@
     }
 
     #about_section{
-        background: url("bgabout.png");
         padding: 80px 0;
         width: 100%;
         height: 80vh;
@@ -219,6 +220,12 @@
 
         /* Extra small devices (phones, 600px and down) */
         @media only screen and (max-width: 600px){
+            header{
+                display: none;
+            }
+            .mobileToggleMenu{
+                display:block !important;
+            }
             footer .newsletter{
                 width: 90%;
                 margin-top: 50px;
@@ -242,9 +249,7 @@
             .swiper{
                 height: 40vh;
             }
-            .swiper-pagination{
-                bottom: -15%;
-            }
+ 
             .swiper-button-next, .swiper-button-prev{
                 display: none;
             }
@@ -288,6 +293,7 @@
         }
         /* Small devices (portrait, tablets and large phones,600px and up) */
         @media only screen and (min-width: 600px){
+            
             .leaf-1{
                 left: 0;
                 top: -5%;
@@ -320,9 +326,6 @@
             }
             #headerContainer{
                 width: 95% !important;
-            }
-            .swiper-pagination{
-                bottom: -15%;
             }
             .swiper{
                 height: 50vh;
@@ -393,15 +396,15 @@
                 margin-top: 50px;
             }
             .swiper{
-                width: 80%;
-                height: 60vh;
+                width: 100%;
+                height: 100vh;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
             }
             .menubar{
                 right: 11%;
                 top: -3%;
-            }
-            .swiper-pagination{
-                bottom: -13%;
             }
             #aboutsec{
                 width: 50% !important;
@@ -452,7 +455,7 @@
             flex-direction: column;
         }
         .offcanvas .navigation ul a:hover{
-            background: #424242;
+            background: #64A705;
             transition: .3s ease;
         }
         .offcanvas .navigation ul  a{
@@ -477,6 +480,23 @@
             top: 0;
             display: flex;
             align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .splash h1{
+            color: #64A705;
+            margin-top: -30px;
+        }
+        .titleSplash{
+            animation: splashscreen 2s;
+        }
+        .splash p{
+            color: #00000044;
+            letter-spacing: 3px;
+            word-spacing: 5px;
+        }
+        .subSplash{
+            animation: splashscreen 2s;
         }
         .imageSplash{
             animation: splashscreen 6s;
@@ -493,20 +513,113 @@
                 opacity: 1;
             }
             to{
-                top: -100%;
+                opacity: 0;
             }
+        }
+        header{
+            width: 100%;
+            top: 0;
+            z-index: 3;
+            text-align: center;
+            position: fixed !important;
+            transition: 0.3s ease;
+        }
+        header nav{
+            width: 60%;
+            position: relative !important;
+            top: 0;
+            margin: 0 auto;
+            padding: 40px;
+            /* border-top: 1px solid #fff; */
+            border-top: 1px solid rgba(255, 255, 255, 0.489);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.489);
+        }
+        .sticky{
+            background-color: #191919;
+        }
+        header nav a{
+            padding: 20px;
+            color: #fff;
+            text-decoration: none;
+            transition: .2s ease;
+        }
+        header nav a:hover{
+            color: #64A705;
+        }
+
+        #logo{
+            z-index: 3;
+            position: absolute;
+            width: 280px;
+        }
+        .headerOverlay{
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #000000c2;
+            z-index: 2;
+        }
+        .swiper-pagination{
+            position: absolute;
+            left: 5% !important;
+            margin-bottom: 50px;
+            z-index: 99;
+            width: 150px !important;
+        }
+
+        footer h2{
+            color: #518706;
+        }
+        footer h5{
+            color: #ffffff;
+            letter-spacing: 3px;
+            margin-top: 20px;
         }
     </style>
 
     </head>
   <body style="background-color: #000000;">
-    <div class="splash">
-        <img src="logo.webp" class="d-block mx-auto mb-5 imageSplash" width="250" alt="">
-    </div>
+    <!-- <div class="splash">
+        <img src="images/logo.webp" class="d-block mx-auto mb-5 imageSplash" width="190" alt="">
+        <h1 style="display: none;" class="titleSplash" id="asat">Asatsuyu</h1>
+        <p style="display: none;" class="subSplash" id="asatP">JAPAN LUXURY TRAVEL</p>
+    </div> -->
     <div style="overflow: hidden;">
-    <div class="container position-relative mt-5 mb-5" style="width: 60%;" id="headerContainer">
-        <button type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><i class="fa-solid fa-bars menubar"></i></button>
-        <div class="offcanvas offcanvas-end bg-dark" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+    <header>
+        <nav>
+            <a href="">Home</a>
+            <a href="">Experience</a>
+            <a href="">Service</a>
+            <a href="">About Us</a>
+            <a href="">Contact</a>
+        </nav>
+    </header>
+    <div class="swiper mySwiper">
+        <div class="headerOverlay"></div>
+        <img src="images/logo.webp" class="d-block mx-auto mb-5" width="180" alt="" id="logo">
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://asianwanderlust.com/wp-content/uploads/2018/09/Shinjuku-Tokyo-Kabukicho.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="https://c4.wallpaperflare.com/wallpaper/50/519/649/religious-pagoda-cherry-blossom-japan-wallpaper-preview.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8fA%3D%3D&w=1000&q=80" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://expertphotography.b-cdn.net/wp-content/uploads/2019/03/travel-pictures-hakone.jpg" />
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    <div class="container position-relative mt-5 mb-5" style="width: 60%; " id="headerContainer">
+        <button type="button" data-bs-toggle="offcanvas" class="mobileToggleMenu" style="display: none;" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><i class="fa-solid fa-bars menubar"></i></button>
+        <div class="offcanvas offcanvas-end bg-dark"  data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
             <div class="offcanvas-header">
               <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
               <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
@@ -522,27 +635,10 @@
                     </ul>
                   </div>
           </div>
-        <img src="logo.webp" class="d-block mx-auto mb-5" width="180" alt="">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="https://asianwanderlust.com/wp-content/uploads/2018/09/Shinjuku-Tokyo-Kabukicho.jpg" alt="">
-              </div>
-              <div class="swiper-slide">
-                <img src="https://c4.wallpaperflare.com/wallpaper/50/519/649/religious-pagoda-cherry-blossom-japan-wallpaper-preview.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8fA%3D%3D&w=1000&q=80" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://expertphotography.b-cdn.net/wp-content/uploads/2019/03/travel-pictures-hakone.jpg" />
-              </div>
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
-        <div class="swiper-pagination" ></div>
-    </div> <br><br><br><br><br>
+         <br><br><br><br><br>
+    </div>
+</div>
+
     <section id="about_section">
         <div class="container mt-5" style="width: 60%;" id="aboutsec">
             
@@ -555,18 +651,18 @@
                     Searching and planning to travel takes time. So, We carefully selected luxury accommodations, dining, traditional wellness, and unforgettable experiences for exclusive and luxury travel experiences in Japan.
                 </p>
                 <!-- <a href="#" class="seeMore">See More</a> -->
-                <button class="btn custombtn w-25">See More</button>
+                <button class="btn custombtn w-25">More About Us</button>
             </div>
             <div class="leaf-1" data-aos="fade-up-right" 
             data-aos-anchor="#example-anchor"
             data-aos-offset="1200"
             data-aos-duration="1200">
-                <img src="leaves1.png" alt="">
+                <img src="images/leaves1.png" alt="">
             </div>
             <div class="leaf-2" data-aos="fade-down-left" data-aos-anchor="#example-anchor"
             data-aos-offset="1200"
             data-aos-duration="1200">
-                <img src="leaves2.png" alt="">
+                <img src="images/leaves2.png" alt="">
             </div>
         </div>
             
@@ -584,7 +680,7 @@
         data-aos="fade-up"
         data-aos-duration="1000">
             <div class="overlaycard card-img-top"></div>
-            <img src="winter.png" class="card-img-top" alt="...">
+            <img src="images/winter.png" class="card-img-top" alt="...">
             <div class="card-body"  style="overflow: hidden; z-index: 9;">
 
               <h5 class="card-title">Winter</h5>
@@ -595,7 +691,7 @@
         data-aos="fade-up"
         data-aos-duration="800">
             <div class="overlaycard card-img-top"></div>
-            <img src="spring.png" class="card-img-top" alt="...">
+            <img src="images/spring.png" class="card-img-top" alt="...">
             <div class="card-body"  style="overflow: hidden; z-index: 9;">
 
               <h5 class="card-title">Spring</h5>
@@ -606,7 +702,7 @@
         data-aos="fade-up"
         data-aos-duration="600">
             <div class="overlaycard card-img-top"></div>
-            <img src="summer.png" class="card-img-top" alt="...">
+            <img src="images/summer.png" class="card-img-top" alt="...">
             <div class="card-body"  style="overflow: hidden; z-index: 9;">
 
               <h5 class="card-title">Summer</h5>
@@ -617,7 +713,7 @@
         data-aos="fade-up"
         data-aos-duration="400">
             <div class="overlaycard card-img-top"></div>
-            <img src="autumn.png" class="card-img-top" alt="...">
+            <img src="images/autumn.png" class="card-img-top" alt="...">
             <div class="card-body"  style="overflow: hidden; z-index: 9;">
 
               <h5 class="card-title">Autumn</h5>
@@ -628,7 +724,16 @@
 
 
     <footer>
-        <img src="logo.webp" class="d-block mx-auto mb-5" width="180" alt="">
+        <img src="images/logo.webp" class="d-block mx-auto mb-5" width="280" alt="">
+        <h2>ASATSUYU</h2>
+        <h5>LUXURY JAPAN TRAVEL</h4><br>
+        <div class="newsletter">
+            <div class="row">
+                <div class="col-8"><input type="text" class="form-control customform" placeholder="Enter your email for newsletter..."></div>
+                <div class="col-4"><button class="btn custombtn w-100">Subscribe</button></div>
+            </div>
+        </div><br><br><br>
+        <h5>Social Media</h5><br><br>
         <ul>
             <li><a href=""><i class="fa-brands fa-facebook" style="color: #4267b2;"></i></a></li>
             <li><a href=""><i class="fa-brands fa-square-instagram" style="color: #962fbf;"></i></a></li>
@@ -636,19 +741,6 @@
             <li><a href=""><i class="fa-brands fa-telegram" style="color: #0088cc;"></i></a></li>
             <li><a href=""><i class="fa-brands fa-square-whatsapp" style="color: #25d366;"></i></a></li>
         </ul>
-        <nav>
-            <a href="">Home</a>
-            <a href="">Experience</a>
-            <a href="">Service</a>
-            <a href="">About Us</a>
-            <a href="">Contact</a>
-        </nav>
-        <div class="newsletter">
-            <div class="row">
-                <div class="col-8"><input type="text" class="form-control customform" placeholder="Sign up for newsletter"></div>
-                <div class="col-4"><button class="btn custombtn w-100">Sign Up</button></div>
-            </div>
-        </div>
         <br><br>
         <p style="font-size: 0.9rem; margin-top: 50px;">Copyright @ 2023 - All Rights Reserved by <span style="color: #B6FF50;">Asatsuyu</span>.</p>
         <br><br>
@@ -659,6 +751,7 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Initialize Swiper -->
     <script>
@@ -676,7 +769,6 @@
         },
         pagination: {
             el: ".swiper-pagination",
-            type: "fraction",
         },
         });
 
@@ -688,6 +780,20 @@
         setTimeout(function() {
             document.querySelector('.splash').remove()
         }, 8000);
+
+        setTimeout(function() {
+            $(".titleSplash").show()
+        }, 1000);
+        setTimeout(function() {
+            $(".subSplash").show()
+        }, 2000);
+
+
+        window.addEventListener("scroll", function(){
+            var header = document.querySelector("header")
+            header.classList.toggle("sticky", window.scrollY> 0)
+        })
+
     </script>
     </body>
 </html>
