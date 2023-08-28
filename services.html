@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>Asatsuyu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        *{
+            color: #fff;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+        }
+
+
+
+        header{
+            width: 100%;
+            top: 0;
+            z-index: 3;
+            text-align: center;
+            position: fixed !important;
+            transition: 0.3s ease;
+        }
+        header nav{
+            width: 60%;
+            position: relative !important;
+            top: 0;
+            margin: 0 auto;
+            padding: 40px;
+            /* border-top: 1px solid #fff; */
+            border-top: 1px solid rgba(255, 255, 255, 0.489);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.489);
+        }
+        .sticky{
+            background-color: #191919;
+        }
+
+        header nav a{
+            padding: 20px;
+            color: #fff;
+            text-decoration: none;
+            transition: .2s ease;
+        }
+        header nav a:hover{
+            color: #64A705;
+        }
+        .header-content{
+            width: 100%;
+            height: 40vh;
+            background-color: #191919;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 105px ;
+            background: url("images/bgimage2.webp");
+            overflow: hidden;
+            position: relative;
+        }
+        .header-content .overlay{
+            background-color: rgba(0,0,0,0.8);
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+        }
+        .header-content h1{
+            color: #64A705;
+        }
+        .header-content p{
+            width: 60%;
+            text-align: center;
+            margin-top: 30px;
+            line-height: 2.5rem;
+        }
+
+
+        .custombtn{
+            background-color: #64A705;
+            border-radius: 3px;
+        }
+        .custombtn:hover{
+            background-color: #518706;
+        }
+        
+    footer{
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 90px;
+        text-align: center;
+    }
+    footer ul{
+        list-style: none;
+        margin-top: -20px;
+        margin-left: -30px;
+        margin-bottom: 30px;
+    }
+    footer li{
+        display: inline-block;
+        margin: 10px 25px;
+    }
+    footer li a{
+        font-size: 1.8rem;
+    }
+
+    footer nav a{
+        text-decoration: none;
+        margin: 10px 40px;
+        color: #fff;
+        transition: .2s ease;
+    }
+    footer .newsletter{
+        width: 40%;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    footer nav a:hover{
+        color: #64A705;
+    }
+    footer h2{
+            color: #518706;
+        }
+        footer h5{
+            color: #ffffff;
+            letter-spacing: 3px;
+            margin-top: 20px;
+        }
+
+
+
+
+
+
+        .timeline-section{
+	background-color: #000000;
+	min-height: 100vh;
+	padding: 100px 15px;
+}
+.timeline-items{
+	max-width: 1000px;
+	margin:auto;
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+.timeline-items::before{
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 100%;
+	background-color: #191919;
+	left: calc(50% - 1px);
+}
+.timeline-item{
+	margin-bottom: 40px;
+	width: 100%;
+	position: relative;
+}
+.timeline-item:last-child{
+	margin-bottom: 0;
+}
+.timeline-item:nth-child(odd){
+    padding-right: calc(50% + 30px);
+	text-align: right;
+}
+.timeline-item:nth-child(even){
+    padding-left: calc(50% + 30px);
+}
+.timeline-dot{
+	height: 16px;
+	width: 16px;
+	background-color: #518706;
+	position: absolute;
+	left: calc(50% - 8px);
+	border-radius: 50%;
+	top:10px;
+}
+.timeline-date{
+	font-size: 18px;
+	color: #518706;
+	margin:6px 0 15px;
+}
+.timeline-content{
+    background-color: #191919;
+	padding: 30px;
+	border-radius: 5px;
+}
+.timeline-content h3{
+    font-size: 20px;
+	color: #518706;
+	margin:0 0 10px;
+	text-transform: capitalize;
+	font-weight: 500;
+}
+.timeline-content p{
+    color: #c8c8c8;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 22px;
+}
+
+/* responsive */
+@media(max-width: 767px){
+	.timeline-items::before{
+		left: 7px;
+	}
+	.timeline-item:nth-child(odd){
+		padding-right: 0;
+		text-align: left;
+	}
+	.timeline-item:nth-child(odd),
+	.timeline-item:nth-child(even){
+		padding-left: 37px;
+	}
+	.timeline-dot{
+		left:0;
+	}
+}
+
+.main-content{
+    width: 65vw;
+    margin: 0 auto;
+    background-color: #64A705;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.description{
+    width: 65vw;
+    margin: 0 auto;
+    margin-top: 80px !important;
+}
+.description ul li{
+    margin-top: 20px;
+}
+.main-content .image-container{
+    width: 50% !important;
+    padding: 0;
+    margin: 0;
+}
+.main-content .image-container img{
+    object-fit: cover;
+}
+.content-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.content-container h2{
+    margin-bottom: 60px;
+    color: #000;
+}
+.content-container p{
+    width: 70%;
+    line-height: 2.5rem;
+}
+
+.custom-btn{
+    background-color: #000000;
+    padding: 15px 30px;
+    color: #fff;
+    border: none;
+    margin-top: 30px;
+    text-decoration: none;
+}
+.custom-btn:hover{
+    background-color: #191919;
+}
+.paybtn:hover{
+    background-color: #6ca817 !important;
+}
+
+
+.servicefee{
+    background-color: #191919;
+    margin-top: 200px;
+    padding-bottom: 200px !important;
+
+}
+.innerservicefee{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.innerservicefee .itemservice{
+    width: 30%;
+    background-color: #518706;
+    padding: 40px;
+}
+.innerservicefee .itemservice img{
+    width: 260px;
+    margin-bottom: 50px;
+}
+
+.innerservicefee .itemservice p{
+    text-align: start;
+    line-height: 2rem;
+    margin-top: 50px;
+}
+
+.tripto{
+    width: 50%;
+    margin: 150px auto;
+    margin-bottom: 350px !important;
+}
+.tripto img{
+    margin-right: 60px;
+}
+.tripto p{
+    line-height: 2rem;
+    width: 70%;
+}
+    </style>
+</head>
+
+
+
+
+    <body style="background-color: #000000;">
+          
+        <div style="overflow: hidden;">
+            <header>
+                <nav>
+                    <a href="">Home</a>
+                    <a href="">Experience</a>
+                    <a href="">Service</a>
+                    <a href="">About Us</a>
+                    <a href="">Contact</a>
+                </nav>
+            </header>
+
+
+            <div class="header-content">
+                <h1 style="z-index: 9;">Services</h1>
+                <p style="z-index: 9;">It is common for travelers to experience anxiety when traveling abroad to non-English speaking countries, particularly when exploring countries that have a different alphabet. As a professional and experienced travel advisor, we are here to save you time, reduce your stress, and offer you a hassle-free and curated travel experience in Japan.</p>
+                <div class="overlay"></div>
+            
+            </div>
+
+
+            <div class="offer text-center"><br><br><br><br><br><br><br><br>
+                <h1 class="mb-5">What We Offer</h1><br><br><br><br>
+                <section class="main-content">
+                    <div class="image-container">
+                        <img src="images/autumn.png" alt="">
+                    </div>
+                    <div class="content-container">
+                        <h2>BESPOKE TRAVEL DESIGN</h2>
+                        <p>We work through a consultative process to understand what you hope to experience through your travels in Japan and then design and book customized itineraries. This includes family travel, honeymoons/anniversaries, solo travel around Japan trips, adventure travel, wellness travel and more.</p>
+                        <button class="custom-btn">How We Work</button>
+                    </div>
+                </section>
+                <section class="main-content">
+                    <div class="content-container">
+                        <h2>SURPRISE HOLIDAY</h2>
+                        <p>Surprise Holiday is the perfect way to make a special occasion even more memorable. Whether it's a marriage proposal, anniversary, honeymoon, birthday, or other special occasions, we can help you plan the perfect surprise holiday. We will work with you to create an itinerary that is tailored to your needs and preferences. From accommodation and transport to activities and entertainment, we can make your surprise holiday an experience that you'll never forget.</p>
+                        <button class="custom-btn">How We Work</button>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/autumn.png" alt="">
+                    </div>
+                </section>
+            </div>
+
+            
+
+            <section class="timeline-section">
+                <div class="text-center mb-5">
+                    <h1>HOW WE WORK</h1>
+                    <p>Ready for your trip to Japan?
+                        Let us help you plan everything.</p><br><br>
+                        <button class="btn custombtn">Get Started</button>
+                </div><br><br>
+                <div class="timeline-items">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">First Step</div>
+                        <div class="timeline-content">
+                            <h3>COMPLIMENTARY CONSULTATION</h3>
+                            <p>In this stage, we will learn about when would you like to travel to Japan, your interests, and your preferences. Then we will discuss the client's budget for their trip, how we will move forward and review our professional fee which vary with the type of travel planning/booking undertaken.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Second Step</div>
+                        <div class="timeline-content">
+                            <h3>$ 10 TRIP PLANNING FEE</h3>
+                            <p>Non-refundable trip planning fee.
+
+                                In this stage, we will use our travel expertise, knowledge, and contact our connections to create a curated travel experience for you. We will also do our best for our clients to take advantage of exclusive benefits and perks that you cannot avail by your own. </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Third Step</div>
+                        <div class="timeline-content">
+                            <h3>TRAVEL ITINERARY PROPOSAL</h3>
+                            <p>After we curate travel plans,  We will provide your customized itinerary well-detailed with the important points of your travel. We will also inform the accommodation and restaurant about your arrival so they can prepare your special request and get ready to welcome you.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Fourth Step</div>
+                        <div class="timeline-content">
+                            <h3>EXPERIENCE</h3>
+                            <p>By this time you will seize the moment and enjoy your vacation in Japan. Don’t get panic in case you encounter the language barrier, we are here to help you to overcome it.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Last Step</div>
+                        <div class="timeline-content">
+                            <h3>SHARE & TRIP FEEDBACK</h3>
+                            <p>We will appreciate it if you will share your experience with us. We also invite you to give us feedback.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+<br><br><br><br><br><br>
+            <section class="profees text-center mt-5 pt-5">
+                <h1>Our Professional Fees</h1>     
+                <br><br><br><br>
+                
+                <section class="main-content" style="background-color: #000 !important;">
+                    <div class="image-container">
+                        <img src="images/autumn.png" alt="" width="500">
+                    </div>
+                    <div class="text-start" style="padding: 30px">
+                        <h5 style="color: #518706 !important; text-align: start !important;">TRIP PLANNING FEE: LUXURY TRAVEL EXPERIENCE</h5><br>
+                        <span style="color: #fff !important; font-weight: 600; padding: 10px 20px !important; text-align: start !important; background-color: #518706;">$ 20</span><br><br>
+                        <p>
+                            Includes the Overall Trip Planning services and bespoke travel design.  The trip planning fee varies based on the length and complexity of the trip and starts at $20 for to 2 people for up to 5 days of travel, An additional $75/person/5 days thereafter.  Infant 0-2 years old is free.<br><br>
+                            Overall Trip Planning Fee, means bespoke travel design, planning, and advice on destinations, accommodations, dining, transportation, activities, and experiences in Japan<br><br>
+                            *Please note that Travel Design Fees are non-refundable and non-transferable. 
+                        </p>
+                        <button class="custom-btn paybtn" style="background-color: #518706;">Pay Here</button>
+                    </div>
+
+                    
+                </section>
+                <div class="description" style="text-align: start;">
+                    <h5>Description</h5>
+                    <p>
+                        <ul>
+                            <li>To acknowledge our time and effort put into planning one-of-a-kind experiences for you, we charge Upfront Trip Planning/Service Fees. We are a travel advisory, whereby our clients receive our time as consultants and our expertise as travel planners.</li>
+                            <li>Our fees are either for Overall Trip Planning.  Fees are non-refundable and non-transferable.</li>
+                            <li>Full payment of the Trip Planning Fees must be settled before any services could be rendered.</li>
+                            <li>The trip planning fee covers the discussion of your trip dreams and expectations, the time spent researching, developing, and revising a proposal to create the perfect customized itinerary.</li>
+                            <li>This track is curated for all leisure travelers who are interested in any of our luxury travel design plans.</li>
+                            <li>For trips longer than 5 days additional planning fees may apply.</li>
+                            <li>Note that for common destinations, we partner with higher-end luxury hotels that generally run from $500-$1,500+ per night per room. This means we typically work with budgets of $1,000+ per day for full itinerary planning (more for larger families or when multiple rooms are needed).</li>
+                            <li>Whenever possible we work with net, transparent pricing so that our clients are fully informed of the components of their trip cost.</li>
+                            <li>Your curated itinerary will be sent to you via the email address provided no later than 1 week after your request is made.</li>
+                        </ul>
+                    </p>
+                </div>
+                
+            </section>
+
+
+
+            <section class="servicefee text-center"><br><br><br><br><br>
+                <h1>By Service Fee</h1><br><br><br><br><br>
+                <div class="innerservicefee">
+                    <div class="itemservice">
+                        <img src="images/autumn.png" alt="">
+                        <div class="item-content">
+                            <h4>AIR TRAVEL</h4>
+                            <h6>International flight: $ 50/ ticket</h6>
+                            <h6>Domestic flight: $ 30/ ticket</h6>
+                            <p>Should you wish to have booking assistance with your international flight travel arrangements to Japan and domestic flight around Japan, Our travel advisors are available to provide assistance with every step of the booking process. We also arrange domestic flights within Japan, making it easier for you to get from one destination to the next.</p>
+                            <button class="custom-btn">Add To Cart</button>
+                        </div>
+                    </div>
+                    <div class="itemservice">
+                        <img src="images/autumn.png" alt="">
+                        <div class="item-content">
+                            <h4>HOTEL</h4><br>
+                            <h6>$ 50/ booking</h6><br>
+
+                            <p>Our travel advisor is here to help you book 
+
+                                exclusive accommodation to stay during your trip. We understand that Japan has thousands of accommodation options and
+                                
+                                not all of them are available in English, so we are here to assist you in booking luxury accommodation for an unforgettable experience.</p>
+                            <button class="custom-btn">Add To Cart</button>
+                        </div>
+                    </div>
+                    <div class="itemservice">
+                        <img src="images/autumn.png" alt="">
+                        <div class="item-content">
+                            <h4>CONCIERGE SERVICE</h4><br>
+                            <h6>$ 100/booking up to 5 days of travel</h6><br>
+
+                            <p>Our Concierge Service is designed to make your stay in Japan as hassle-free as possible. We will provide you with assistance in English and Japanese. This applies to the booking of local restaurants, private cars, taxi,  trains, spa, guided tours, entertainment, and events, as well as other professional services in Japan. </p>
+                            <button class="custom-btn">Add To Cart</button>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <div class="description" style="text-align: start; width: 80% !important;">
+                    <h5>Cancellations & Service Fees Policy</h5>
+                    <p>
+                        <ul>
+                            <li>Upfront Service Fees are non-refundable and non-transferable. Fees will apply regardless you decided to take/book the trip/service or not.</li>
+                            <li>Full payment of the Service Fees must be settled before any services could be rendered.</li>
+                            <li>Changes and Cancellations: We understand that your plans may change, however, due to the work done in advance to secure reservations and VIP status prior to your trip, we reserve the right to charge a $50 fee for changes or cancellations.</li>
+                            <li>Service Fees are subject to change at any moment, without the need for prior notification. This will not affect yearly fees during the term of validity.</li>
+                            <li>Asatsuyu 朝露｜Japan Travel is not responsible for, nor accepts any liability arising out of any schedule changes implemented by an airline that may impact you, your onward travel, or arrangements consequent on your flights.</li>
+                            <li>Please note that the hotel booking service is designed for reserving only one (1) room stays. For multi-room stays, and more elaborate trips, please contact us directly.</li>
+                            <li>Concierge fee is for booking and managing all components, and support while traveling.</li>
+                        </ul>
+                    </p>
+                </div>
+            </section>
+
+
+            <div class="tripto">
+                <section class="main-content" style="background-color: #000 !important;">
+                    <div class="image-container">
+                        <img src="images/autumn.png" alt="" width="400">
+                    </div>
+                    <div class="text-start" style="padding: 30px">
+                        <h5 style="color: #518706 !important; text-align: start !important;">Ready for your trip to Japan?</h5>
+                        <h6>Let us help you plan everything.</h6><br><br>
+                        <p>
+                            Every itinerary we design is tailored exclusively for you. Our goal is to craft a one-of-a-kind experience that aligns perfectly with your preferences and desires. To discover more about our personalized offerings, reach out to one of our expert travel advisors.
+                        </p><br><br>
+                        <a href="" class="custom-btn paybtn" style="background-color: #518706;">Click here for the inquiry form</a>
+                    </div>
+                </section>
+            </div>
+
+
+
+
+
+            <footer>
+                <img src="images/logo.webp" class="d-block mx-auto mb-5" width="280" alt="">.
+                <h2>ASATSUYU</h2>
+                <h5>LUXURY JAPAN TRAVEL</h4><br>
+                <div class="newsletter">
+                    <div class="row">
+                        <div class="col-8"><input type="text" class="form-control customform" placeholder="Enter your email for newsletter..."></div>
+                        <div class="col-4"><button class="btn custombtn w-100">Subscribe</button></div>
+                    </div>
+                </div><br><br><br>
+                <h5>Social Media</h5><br><br>
+                <ul>
+                    <li><a href=""><i class="fa-brands fa-facebook" style="color: #4267b2;"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-square-instagram" style="color: #962fbf;"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-square-twitter" style="color: #1da1f2;"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-telegram" style="color: #0088cc;"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-square-whatsapp" style="color: #25d366;"></i></a></li>
+                </ul>
+                <br><br>
+                <p style="font-size: 0.9rem; margin-top: 50px;">Copyright @ 2023 - All Rights Reserved by <span style="color: #B6FF50;">Asatsuyu</span>.</p>
+                <br><br>
+            </footer>
+        </div>
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+        <script>
+            AOS.init();
+            var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            effect: "fade",
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            });
+    
+    
+            window.addEventListener("scroll", function(){
+                var header = document.querySelector("header")
+                header.classList.toggle("sticky", window.scrollY> 0)
+            })
+    
+        </script>
+    </body>
+</html>
