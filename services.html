@@ -328,6 +328,103 @@
     line-height: 2rem;
     width: 70%;
 }
+.card-container{
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 20px;
+    }
+
+    .card{
+        border: none !important;
+        background-color: #518706;
+        width: calc(50% - 10px); /* Calculate 50% width minus spacing */
+        transition: .3s ease;
+        border-radius: 0px !important;
+    }
+
+    .card:hover{
+        transform: translateY(-15px) !important;
+        box-shadow: 0 0 20px #1c1c1c;
+    }
+    .card p{
+        color: #ffffff;
+        margin: 0 !important;
+        width: 100% !important;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .card h3{
+        color: #191919;
+        width: 100%;
+        text-align: center;
+    }
+    .card .overlaycard{
+        position: absolute;
+        bottom: 14%;
+        left: -10%;
+        width: 250%;
+        height: 10vh;
+        z-index: 1;
+        filter: blur(20px);
+    }
+
+@media only screen and (max-width: 992px){
+
+    .header-content{
+        height: 50vh !important;
+    }
+    .header-content p{
+        width: 90% !important;
+    }
+    .sections {
+        display: none !important;
+
+    }
+    .card-container{
+        display: block !important;
+    }
+    .card-container .card{
+        text-align: center;
+        margin: 0 auto;
+        border: 1px solid #518706 !important;
+        margin-bottom: 30px !important;
+        width: 90% !important;
+    }
+    .main-content .image-container{
+        width: 100% !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+    .main-content .image-container img{
+        width: 300px;
+    }
+    
+    .main-content {
+        width: 100%;
+        background-color: #64A705;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        flex-direction: column;
+    }
+    #planning{
+        text-align: center !important;
+    }
+    .description{
+        width: 90% !important;
+    }
+    .innerservicefee .itemservice {
+        width: 95% !important;
+        margin-bottom: 30px !important;
+    }
+    .innerservicefee {
+        flex-direction: column;
+    }
+
+}
     </style>
 </head>
 
@@ -337,15 +434,7 @@
     <body style="background-color: #000000;">
           
         <div style="overflow: hidden;">
-            <header>
-                <nav>
-                    <a href="">Home</a>
-                    <a href="">Experience</a>
-                    <a href="">Service</a>
-                    <a href="">About Us</a>
-                    <a href="">Contact</a>
-                </nav>
-            </header>
+
 
 
             <div class="header-content">
@@ -358,28 +447,59 @@
 
             <div class="offer text-center"><br><br><br><br><br><br><br><br>
                 <h1 class="mb-5">What We Offer</h1><br><br><br><br>
-                <section class="main-content">
-                    <div class="image-container">
-                        <img src="images/autumn.png" alt="">
+                <div class="card-container" style="display: none;">
+                    <div class="card" style="width: 18rem; overflow: hidden;"
+                    data-aos="fade-up"
+                    data-aos-duration="1000">
+                        <div class="overlaycard card-img-top"></div>
+                        <img src="images/winter.png" class="card-img-top" alt="...">
+                        <div class="card-body"  style="overflow: hidden; z-index: 9;">
+            
+                          <h3 class="card-title">BESPOKE TRAVEL DESIGN</h3>
+                          <p class="card-text">We work through a consultative process to understand what you hope to experience through your travels in Japan and then design and book customized itineraries. This includes family travel, honeymoons/anniversaries, solo travel around Japan trips, adventure travel, wellness travel and more.</p>
+                          <button class="custom-btn">How We Work</button>
+                        </div>
                     </div>
-                    <div class="content-container">
-                        <h2>BESPOKE TRAVEL DESIGN</h2>
-                        <p>We work through a consultative process to understand what you hope to experience through your travels in Japan and then design and book customized itineraries. This includes family travel, honeymoons/anniversaries, solo travel around Japan trips, adventure travel, wellness travel and more.</p>
-                        <button class="custom-btn">How We Work</button>
+                    <div class="card" style="width: 18rem; overflow: hidden;"
+                    data-aos="fade-up"
+                    data-aos-duration="800">
+                        <div class="overlaycard card-img-top"></div>
+                        <img src="images/spring.png" class="card-img-top" alt="...">
+                        <div class="card-body"  style="overflow: hidden; z-index: 9;">
+            
+                          <h3 class="card-title">SURPRISE HOLIDAY</h3>
+                          <p class="card-text">Surprise Holiday is the perfect way to make a special occasion even more memorable. Whether it's a marriage proposal, anniversary, honeymoon, birthday, or other special occasions, we can help you plan the perfect surprise holiday. We will work with you to create an itinerary that is tailored to your needs and preferences. From accommodation and transport to activities and entertainment, we can make your surprise holiday an experience that you'll never forget.</p>
+                          <button class="custom-btn">How We Work</button>
+                        </div>
                     </div>
-                </section>
-                <section class="main-content">
-                    <div class="content-container">
-                        <h2>SURPRISE HOLIDAY</h2>
-                        <p>Surprise Holiday is the perfect way to make a special occasion even more memorable. Whether it's a marriage proposal, anniversary, honeymoon, birthday, or other special occasions, we can help you plan the perfect surprise holiday. We will work with you to create an itinerary that is tailored to your needs and preferences. From accommodation and transport to activities and entertainment, we can make your surprise holiday an experience that you'll never forget.</p>
-                        <button class="custom-btn">How We Work</button>
-                    </div>
-                    <div class="image-container">
-                        <img src="images/autumn.png" alt="">
-                    </div>
-                </section>
+                </div>
+
+                <div class="sections">
+                    <section class="main-content">
+                        <div class="image-container">
+                            <img src="images/autumn.png" alt="">
+                        </div>
+                        <div class="content-container">
+                            <h2>BESPOKE TRAVEL DESIGN</h2>
+                            <p>We work through a consultative process to understand what you hope to experience through your travels in Japan and then design and book customized itineraries. This includes family travel, honeymoons/anniversaries, solo travel around Japan trips, adventure travel, wellness travel and more.</p>
+                            <button class="custom-btn">How We Work</button>
+                        </div>
+                    </section>
+                    <section class="main-content">
+                        <div class="content-container">
+                            <h2>SURPRISE HOLIDAY</h2>
+                            <p>Surprise Holiday is the perfect way to make a special occasion even more memorable. Whether it's a marriage proposal, anniversary, honeymoon, birthday, or other special occasions, we can help you plan the perfect surprise holiday. We will work with you to create an itinerary that is tailored to your needs and preferences. From accommodation and transport to activities and entertainment, we can make your surprise holiday an experience that you'll never forget.</p>
+                            <button class="custom-btn">How We Work</button>
+                        </div>
+                        <div class="image-container">
+                            <img src="images/autumn.png" alt="">
+                        </div>
+                    </section>
+                </div>
+                
             </div>
 
+            <br><br><br><br><br><br>
             
 
             <section class="timeline-section">
@@ -446,8 +566,8 @@
                     <div class="image-container">
                         <img src="images/autumn.png" alt="" width="500">
                     </div>
-                    <div class="text-start" style="padding: 30px">
-                        <h5 style="color: #518706 !important; text-align: start !important;">TRIP PLANNING FEE: LUXURY TRAVEL EXPERIENCE</h5><br>
+                    <div class="text-start" style="padding: 30px" id="planning">
+                        <h5 style="color: #518706 !important;">TRIP PLANNING FEE: LUXURY TRAVEL EXPERIENCE</h5><br>
                         <span style="color: #fff !important; font-weight: 600; padding: 10px 20px !important; text-align: start !important; background-color: #518706;">$ 20</span><br><br>
                         <p>
                             Includes the Overall Trip Planning services and bespoke travel design.  The trip planning fee varies based on the length and complexity of the trip and starts at $20 for to 2 people for up to 5 days of travel, An additional $75/person/5 days thereafter.  Infant 0-2 years old is free.<br><br>
@@ -536,22 +656,26 @@
                 </div>
             </section>
 
-
-            <div class="tripto">
+            <br><br><br><br><br><br><br>
+            <div class="profees">
                 <section class="main-content" style="background-color: #000 !important;">
                     <div class="image-container">
                         <img src="images/autumn.png" alt="" width="400">
                     </div>
-                    <div class="text-start" style="padding: 30px">
-                        <h5 style="color: #518706 !important; text-align: start !important;">Ready for your trip to Japan?</h5>
+                    <div class="text-start" style="padding: 30px" id="planning">
+                        <h5 style="color: #518706 !important;">Ready for your trip to Japan?</h5><br>
                         <h6>Let us help you plan everything.</h6><br><br>
+                        <span style="color: #fff !important; font-weight: 600; padding: 10px 20px !important; text-align: start !important; background-color: #518706;">$ 20</span><br><br>
                         <p>
                             Every itinerary we design is tailored exclusively for you. Our goal is to craft a one-of-a-kind experience that aligns perfectly with your preferences and desires. To discover more about our personalized offerings, reach out to one of our expert travel advisors.
-                        </p><br><br>
-                        <a href="" class="custom-btn paybtn" style="background-color: #518706;">Click here for the inquiry form</a>
+                        </p>
+                        <button class="custom-btn paybtn" style="background-color: #518706;">Pay Here</button>
                     </div>
+    
+                    
                 </section>
             </div>
+            <br><br><br><br><br><br><br><br>
 
 
 

@@ -217,10 +217,26 @@
         background: #000; /* Adjust the color and opacity as needed */
         z-index: 2;
     }
+    #headerContainer{
+        position: absolute;
+        right: 0;
+        z-index: 999;
+        top: 0;
+    }
 
         /* Extra small devices (phones, 600px and down) */
         @media only screen and (max-width: 600px){
-            header{
+            #logo{
+                width: 150px !important;
+            }
+            #moreaboutus{
+                font-size: 0.9rem !important;
+                width: 50% !important;
+            }
+            #aboutsec::before{
+                display: none !important;
+            }
+            .deskHeader{
                 display: none;
             }
             .mobileToggleMenu{
@@ -241,6 +257,7 @@
             }
             #headerContainer{
                 width: 95% !important;
+                display: block !important;
             }
             .menubar{
                 right: 2%;
@@ -453,6 +470,7 @@
             margin-top: 250;
             display: flex;
             flex-direction: column;
+            z-index: 99999 !important;
         }
         .offcanvas .navigation ul a:hover{
             background: #64A705;
@@ -587,7 +605,7 @@
         <p style="display: none;" class="subSplash" id="asatP">JAPAN LUXURY TRAVEL</p>
     </div> -->
     <div style="overflow: hidden;">
-    <header>
+    <header class="deskHeader">
         <nav>
             <a href="">Home</a>
             <a href="">Experience</a>
@@ -617,8 +635,8 @@
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-    <div class="container position-relative mt-5 mb-5" style="width: 60%; " id="headerContainer">
-        <button type="button" data-bs-toggle="offcanvas" class="mobileToggleMenu" style="display: none;" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><i class="fa-solid fa-bars menubar"></i></button>
+    <div class="container position-absolute mt-5 mb-5" style="width: 60%; display: none; z-index: 99;" id="headerContainer">
+        <button type="button" data-bs-toggle="offcanvas" class="mobileToggleMenu" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><i class="fa-solid fa-bars menubar"></i></button>
         <div class="offcanvas offcanvas-end bg-dark"  data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
             <div class="offcanvas-header">
               <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
@@ -631,11 +649,10 @@
                         <a href="">Experience</a>
                         <a href="">Service</a>
                         <a href="">About Us</a>
-                        <a href="">Contact</a>
+                        <a href="">Contact</a>  
                     </ul>
                   </div>
           </div>
-         <br><br><br><br><br>
     </div>
 </div>
 
@@ -651,7 +668,7 @@
                     Searching and planning to travel takes time. So, We carefully selected luxury accommodations, dining, traditional wellness, and unforgettable experiences for exclusive and luxury travel experiences in Japan.
                 </p>
                 <!-- <a href="#" class="seeMore">See More</a> -->
-                <button class="btn custombtn w-25">More About Us</button>
+                <button class="btn custombtn w-25" id="moreaboutus">More About Us</button>
             </div>
             <div class="leaf-1" data-aos="fade-up-right" 
             data-aos-anchor="#example-anchor"

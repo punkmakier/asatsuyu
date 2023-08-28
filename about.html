@@ -68,7 +68,7 @@
             position: relative;
         }
         .header-content .overlay{
-            background-color: rgba(0,0,0,0.8);
+            background-color: rgba(0, 0, 0, 0.596);
             position: absolute;
             width: 100%;
             height: 100vh;
@@ -76,6 +76,15 @@
             left: 0;
             z-index: 1;
 
+        }
+        .overlay{
+            background-color: rgba(0,0,0,0.8);
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: 1;
         }
         .header-content h1{
             color: #64A705;
@@ -259,6 +268,73 @@
 }
 
 
+
+
+
+
+
+
+
+@media only screen and (max-width: 992px){
+    .header-about{
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-about .main{
+        margin-top: 80px;
+    }
+    .header-about img{
+        right: 15%;
+        top: 30%;
+    }
+    #overlayid{
+        display: block !important;
+    }
+
+    .tripto{
+        width: 100% !important;
+    }
+    .main-content{
+        flex-direction: column;
+        width: 100vw !important;
+        text-align: center;
+    }
+
+    .main-content .image-container{
+        width: 100% !important;
+    }
+    .main-content .image-container img{
+        width: 380px !important;
+        margin: 0 auto;
+    }
+    .tripto h5,.tripto h6,.tripto p{
+        text-align: center !important;
+    }
+    .custom-btn{
+        margin: 0 auto !important;
+    }
+    .tripto p{
+        width: 100% !important;
+    }
+    .underline{
+        width: 100% !important;
+    }
+
+    .whyus{
+        width: 85% !important;
+    }
+    #readyto{
+        text-align: center !important;
+    }
+
+
+}
+
+
+
+
+
     </style>
 </head>
 
@@ -268,18 +344,12 @@
     <body style="background-color: #000000;">
           
         <div style="overflow: hidden;">
-            <header>
-                <nav>
-                    <a href="">Home</a>
-                    <a href="">Experience</a>
-                    <a href="">Service</a>
-                    <a href="">About Us</a>
-                    <a href="">Contact</a>
-                </nav>
-            </header>
+
 
             <div class="header-about">
-                <div class="main">
+
+                <div class="main" style="z-index: 5;">
+
                     <h1 style="color: #518706;">About Us</h1><br>
                     <h4>Asatsuyu means "Morning Dew" in Japanese.</h4><br><br>
                     <p>
@@ -289,11 +359,16 @@
                         We offer our professional expertise to our clients and offer more in-depth knowledge about unforgettable experiences and amazing destinations in Japan.<br><br>
                         We offer our professional expertise to our clients and offer more in-depth knowledge about unforgettable experiences and amazing destinations in Japan.<br><br>
                     </p>
+                    
                 </div>
-                        <img src="images/logo.webp" alt="" width="320">
+                <div class="overlay" style="height: 110vh !important; z-index: 1; display: none;" id="overlayid"></div>
+                <img src="images/logo.webp" alt="" width="320">
+                        
             </div>
             <div class="bmimage">
                     <img src="images/aboutleave.png" alt="" class="bgimage">
+
+
             </div>
 
 
@@ -310,7 +385,7 @@
                         <img src="images/founder.webp" alt="" width="500" style="margin-top: 50px;">
                     </div>
                     <div class="text-start" style="padding: 30px">
-                        <h5 style="color: #fff !important; text-align: start !important;">Clariss Ordoñez</h5><br>
+                        <h5 style="color: #fff !important;">Clariss Ordoñez</h5><br>
                         <div class="underline"></div>
                         <p>
                             She worked for almost a decade in the tourism industry, and luxury hotels and lived in different parts of Japan after she attained a bachelor's degree in Travel & Tourism Management. The language barrier is one hindrance to fully enjoy when you are traveling in a non-English speaking country this inspired her to help people who would like to experience traveling in Japan whether to see beautiful cherry blossoms, autumn season, or celebrate a special occasion in an endless discovery country of Japan. 
@@ -361,8 +436,8 @@
                     <div class="image-container">
                         <img src="images/autumn.png" alt="" width="400">
                     </div>
-                    <div class="text-start" style="padding: 30px">
-                        <h5 style="color: #518706 !important; text-align: start !important;">Ready for your trip to Japan?</h5>
+                    <div class="text-start" style="padding: 30px" id="readyto">
+                        <h5 style="color: #518706 !important;">Ready for your trip to Japan?</h5>
                         <h6>Let us help you plan everything.</h6><br><br>
                         <p>
                             Every itinerary we design is tailored exclusively for you. Our goal is to craft a one-of-a-kind experience that aligns perfectly with your preferences and desires. To discover more about our personalized offerings, reach out to one of our expert travel advisors.
