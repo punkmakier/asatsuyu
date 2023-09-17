@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "AIR TRAVEL",
+        "price": "50",
+        "description": "Should you wish to have booking assistance with your international flight travel arrangements to Japan and domestic flight around Japan, Our travel advisors are available to provide assistance with every step of the booking process. We also arrange domestic flights within Japan, making it easier for you to get from one destination to the next.",
+        "image": "autumn.png"
+    },
+    {
+        "id": 2,
+        "name": "Wew",
+        "price": "50",
+        "description": "Should you wish to have booking assistance with your international flight travel arrangements to Japan and domestic flight around Japan, Our travel advisors are available to provide assistance with every step of the booking process. We also arrange domestic flights within Japan, making it easier for you to get from one destination to the next.",
+        "image": "winter.png"
+    }
+]
